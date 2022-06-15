@@ -1,0 +1,25 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <div class="form-inline my-2">
+            <h5 class="card-title m-3">Jogos</h5>
+            <div class="form-group mr-2">
+                <label for="" class="sr-only"></label>
+                <input type="text" class="form-control" placeholder="Buscar jogo" [(ngModel)]="search">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block" type="submit" (click)="pesquisar()">Buscar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngIf="!verificaLista()" class="col">
+                Sem jogo cadastrado para exibir.
+            </div>
+            <div *ngIf="verificaLista()" class="col-12 row">
+                <div *ngFor="let item of listaJogos"  class="col-12">
+                    <game [jogo]="item" (deleteRequest)="getListaJogos()" [relatorio]="false">
+                    </game>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

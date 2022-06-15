@@ -1,0 +1,50 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h6 class="modal-title text-danger">Editar jogo</h6>
+        <a style="cursor: pointer;" class="close" (click)="close()">
+            <span aria-hidden="true" class="text-danger">×</span>
+        </a>
+    </div>
+    <div class="modal-body row">
+        <div class="col-6">
+            <div class="div-img-anexo mb-4">
+                <span>
+                    <img [src]="imageUrl" class="card-img-top" [alt]="jogo.nome" width="500px" height="260px">
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-block btn-outline-danger" (click)="triggerFileInput()">
+                            Editar imagem
+                        </button>
+                        <input type="file" id="fileInput" accept="image/png, image/gif, image/jpeg"
+                            (change)="uploadImagem($event)" [hidden]="true">
+                    </div>
+                </span>
+            </div>
+            
+             <div class="form-outline mb-4">
+                <label class="form-label" for="formNome">Nome</label>
+                <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="jogo.nome" />
+            </div>
+        </div>
+        <div class="col-6">  
+            <div class="form-outline mb-4">
+                <label class="form-label" for="formDescricao">Descrição</label>
+                <textarea id="formDescricao" class="form-control form-control-lg" [(ngModel)]="jogo.descricao" rows="5"
+                    maxlength="255"></textarea>
+            </div>
+
+            <div class="form-outline mb-4">
+                <label class="form-label" for="formURL">URL de acesso ao jogo</label>
+                <input type="url" id="formURL" class="form-control form-control-lg" [(ngModel)]="jogo.urlJogo" />
+            </div>
+            
+            <div class="form-outline mb-4">
+                <label class="form-label" for="formNome">Categoria</label>
+                <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="categoria.nome" />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light m-1" (click)="close()">Cancelar</button>
+        <button [disabled]="!validaJogo()" type="button" class="btn btn-outline-danger m-1" (click)="salvar()">Salvar</button>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<nav class="navbar bg-danger">
+    <!-- <span class="navbar-brand mb-0 h1">GoodBrowserGames</span> -->
+    <div class="navbar-expand">
+        <div class="navbar-nav justify-content-start" *ngIf="authService.isAuthenticated()">
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light" routerLink="">Meu perfil</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light" *ngIf="usuario.ehAdmin === 'true'"
+                    routerLink="/game-create">Cadastrar jogos</a>
+            </div>
+            <div class="nav-item"  *ngIf="usuario.ehAdmin === 'true'">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light" routerLink="/game-list">Ver
+                    jogos</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light"
+                    routerLink="/categoria-list">Categorias</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light"
+                    routerLink="/game-list-recommend">Ver jogos recomendados</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light"
+                    routerLink="/avaliacao-mais-util">Avaliações mais uteis</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link text-light">•</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light"
+                    routerLink="/relatorio">Relatório</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="navbar-expand">
+        <div class="navbar-nav justify-content-end" *ngIf="!authService.isAuthenticated()">
+            <div class="nav-item">
+                <a role="button" class="nav-link text-light" routerLink="/login">Login</a>
+            </div>
+            <div class="nav-item">
+                <a role="button" class="nav-link text-light" routerLink="/cadastro">Cadastro</a>
+            </div>
+        </div>
+        <div class="navbar-nav justify-content-end" *ngIf="authService.isAuthenticated()">
+            <div class="nav-item">
+                <a role="button" style="cursor: pointer;" class="nav-link text-light" (click)="logout()">Sair</a>
+            </div>
+        </div>
+    </div>
+</nav>

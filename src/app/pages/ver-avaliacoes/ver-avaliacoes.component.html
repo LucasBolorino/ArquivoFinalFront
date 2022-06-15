@@ -1,0 +1,16 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <h5 class="card-title" *ngIf="verificaLista()">Outras avaliações de {{nome}}</h5>
+        <div class="row">
+            <div *ngIf="!verificaLista()" class="col">
+                Jogo sem avaliacao.
+            </div>
+            <div *ngIf="verificaLista()" class="col-12 row">
+                <div *ngFor="let item of listaAvaliacao" class="col-12">
+                    <avaliacao-game [usuarioCodigo]="item.usuarioCodigo" [jogoCodigo]="item.jogoCodigo"
+                        [nota]="item.nota" [relatorio]="true" [showComentario]="true"></avaliacao-game>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

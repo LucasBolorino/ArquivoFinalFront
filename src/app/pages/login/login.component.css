@@ -1,0 +1,23 @@
+.externa {
+    position: relative;
+    height: 650px;
+}
+
+.interna {
+    left: 50%;
+    top: 50%;
+    margin-left: -240px;
+    margin-top: -240px;
+    position: absolute;
+    width: 500px;
+    height: 470px;
+    background: white;
+    padding: 50px;
+    border-radius: 16px;
+}
+
+.bg-personalizado-terra{
+    background-image: url("https://newstalk1079.com/wp-content/uploads/2021/07/world.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

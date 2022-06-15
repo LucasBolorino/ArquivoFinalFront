@@ -1,0 +1,57 @@
+<div class="card m-2 text-danger">
+    <div class="card-body">
+        <h5 class="card-title">Editar perfil</h5>
+        <!-- Nome input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formNome">Nome</label>
+            <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="usuario.nome" />
+        </div>
+
+        <!-- UserName input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formUserName">Nome do usuário</label>
+            <input type="text" id="formUserName" class="form-control form-control-lg" [(ngModel)]="usuario.userName"
+                autocomplete="off" onkeypress="return event.charCode != 32" />
+        </div>
+
+        <!-- Senha input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formSenha">Senha</label>
+            <input type="password" id="formSenha" class="form-control form-control-lg" [(ngModel)]="usuario.senha"
+                autocomplete="off" />
+        </div>
+
+        <!-- Data de nascimento input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formDataNascimento">Data de nascimento</label>
+            <input type="date" id="formDataNascimento" class="form-control form-control-lg"
+                [(ngModel)]="usuario.dataNascimento" />
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <!-- Estado input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="formEstado">Estado</label>
+                    <input type="text" id="formEstado" class="form-control form-control-lg"
+                        [(ngModel)]="usuario.estado" />
+                </div>
+            </div>
+
+            <div class="col">
+                <!-- País input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="formPais">País</label>
+                    <input type="text" id="formPais" class="form-control form-control-lg" [(ngModel)]="usuario.pais" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col  d-flex justify-content-end">
+                <button [disabled]="!validaUsuario()" (click)="atualizar()" class="btn btn-danger">Confirmar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

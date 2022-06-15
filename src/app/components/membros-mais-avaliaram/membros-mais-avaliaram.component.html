@@ -1,0 +1,10 @@
+<div class="">
+    <div class="row">
+        <div *ngIf="verificaLista()" class="col-12 row d-flex justify-content-around">
+            <div *ngFor="let item of lista;" class="col-2" style="font-size: 12px;">
+                <membros [membro]="item"></membros>
+            </div>
+        </div>
+    </div>
+</div>
+

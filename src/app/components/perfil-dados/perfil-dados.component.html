@@ -1,0 +1,22 @@
+<div class="card m-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6 text-danger">
+                <p><b>{{usuario.nome}}</b></p>
+                <p>@{{usuario.userName}}</p>
+                <p>{{usuario.dataNascimento}} • {{usuario.estado}} - {{usuario.pais}}</p>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div>
+                    <a class="btn btn-danger my-1" routerLink="/profile-update">Atualizar meu perfil</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <lista-de-games class="col-10"></lista-de-games>
+    <lista-de-categorias class="col-2"></lista-de-categorias>
+</div>

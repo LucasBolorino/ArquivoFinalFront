@@ -1,0 +1,36 @@
+<div class="card  border-danger">
+    <div class="card-body row">
+        <div class="col-4">
+            <img [src]="imageUrl" class="card-img-top" [alt]="jogo.nome">
+        </div>
+        <div class="col-8">
+            <h5 class="card-title">{{jogo.nome}}</h5>
+            <div class="my-2">
+                <a role="button" class="btn btn-outline-danger" [routerLink]="['/avaliacao/'+jogo.id]">Ver
+                    avaliações de {{jogo.nome}}</a>
+            </div>
+            <p class="card-text">{{jogo.descricao}}</p>
+            <p class="card-text"><b>@{{userName}}</b></p>
+            <p class="card-text">Link: <a href="{{jogo.urlJogo}}" target="_blank">{{jogo.urlJogo}}</a></p>
+            <p class="card-text" *ngIf="relatorio">Quantidade de avaliação de {{jogo.nome}}: {{jogo.qtdDeAvaliacao}}</p>  
+
+            <span class="card-text"><b>Média avaliação: </b></span>
+            <h1 class="text-primary">
+                <ngb-rating [max]="5" [(rate)]="jogo.nota" [readonly]="true">
+                    <ng-template let-fill="fill" let-index="index">
+                        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+            </h1>
+
+            <button *ngIf="!relatorio" type="button" class="btn btn-outline-danger mr-1"
+                (click)="openAvaliacao(jogo)">Fazer avaliação de {{jogo.nome}}</button>
+
+            <div *ngIf="usuario.ehAdmin === 'true' && relatorio === false">
+                <button type="button" class="btn btn-outline-danger mr-1"
+                    (click)="openModalEditar(jogo)">Editar</button>
+                <button type="button" class="btn btn-danger m-1" (click)="deletarJogo(jogo)">Deletar</button>
+            </div>
+        </div>
+    </div>
+</div>

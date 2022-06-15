@@ -1,0 +1,14 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <div class="row">
+            <div *ngIf="!verificaLista()" class="col">
+                Sem jogos avaliados por mais de 4 membros para exibir.
+            </div>
+            <div *ngIf="verificaLista()" class="col-12 row">
+                <div *ngFor="let item of listaJogos" class="col-12">
+                    <game [jogo]="item" class="row" (deleteRequest)="getListaJogos()" [relatorio]="true"></game>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

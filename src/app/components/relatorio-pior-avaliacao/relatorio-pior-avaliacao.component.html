@@ -1,0 +1,15 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <div class="row">
+            <div *ngIf="!verificaLista()" class="col">
+                Sem jogo cadastrado para exibir.
+            </div>
+            <div *ngIf="verificaLista()" class="col-12 row">
+                <div *ngFor="let item of listaJogos" class="col-12">
+                    <avaliacao-game [usuarioCodigo]="item.usuarioCodigo" [jogoCodigo]="item.id" [showComentario]="true"
+                        [relatorio]="true"></avaliacao-game>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

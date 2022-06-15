@@ -1,0 +1,15 @@
+.star {
+    color: #deb0b0;
+  }
+  
+  .filled {
+    color: #ff0000;
+  }
+  
+  .bad {
+    color: #ffa3a3;
+  }
+  
+  .filled.bad {
+    color: #ff0000;
+  }

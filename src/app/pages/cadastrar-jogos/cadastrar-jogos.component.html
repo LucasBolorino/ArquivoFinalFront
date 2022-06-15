@@ -1,0 +1,40 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <h5 class="card-title">Cadastrar jogo</h5>
+        
+        <!-- Nome input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formNome">Nome</label>
+            <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="jogo.nome" />
+        </div>
+
+        <!-- Descricao input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formDescricao">Descrição</label>
+            <textarea id="formDescricao" class="form-control form-control-lg" [(ngModel)]="jogo.descricao" maxlength="255"></textarea>
+        </div>
+
+        <!-- Descricao input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formURL">URL de acesso ao jogo</label>
+            <input type="url" id="formURL" class="form-control form-control-lg" [(ngModel)]="jogo.urlJogo" />
+        </div>
+
+        <!-- Nome input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formNome">Categoria</label>
+            <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="categoria.nome" />
+        </div>
+
+        <!-- Descricao input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formImagem">Imagem do jogo</label>
+            <input type="file" accept="image/png, image/gif, image/jpeg" id="formImagem" class="form-control form-control-lg" (change)="onFileChanged($event)" />
+        </div>
+
+        <div class="d-flex justify-content-around align-items-center mb-4">
+            <button class="btn btn-danger btn-lg btn-block" [disabled]="!validaJogo()"
+                (click)="cadastro()">Cadastrar</button>
+        </div>
+    </div>
+</div>

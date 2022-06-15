@@ -1,0 +1,19 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="modal-title">Editar categoria</div>
+        <a style="cursor: pointer;" class="close" (click)="close()">
+            <span aria-hidden="true" class="text-danger">×</span>
+        </a>
+    </div>
+    <div class="modal-body">
+        <!-- Nome input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="formNome">Nome</label>
+            <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="categoria.nome" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light m-1" [disabled]="atualizando" (click)="close()">Cancelar</button>
+        <button [disabled]="!validaCategoria()" type="button" class="btn btn-outline-danger m-1" (click)="salvar()">Salvar</button>
+    </div>
+</div>

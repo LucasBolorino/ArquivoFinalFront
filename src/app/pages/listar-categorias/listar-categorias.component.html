@@ -1,0 +1,10 @@
+<div class="card m-2">
+    <div class="card-body text-danger">
+        <h5 class="card-title">Categorias</h5>
+        <div class="row">
+            <div *ngFor="let item of listaCategorias" class="mx-2">
+                <categoria [categoria]="item" (click)="openModal(item)"></categoria>
+            </div>
+        </div>
+    </div>
+</div>

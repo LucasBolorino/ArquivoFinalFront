@@ -1,0 +1,24 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h6 class="modal-title text-danger">Avaliação jogo</h6>
+        <a style="cursor: pointer;" class="close" (click)="close()">
+            <span aria-hidden="true" class="text-danger">×</span>
+        </a>
+    </div>
+    <div class="modal-body">
+        <h1 class="text-primary">
+            <ngb-rating [max]="5" [(rate)]="nota" (rateChange)="avaliacaoJogo($event)">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+        </h1>
+        <div class="form-group">
+            <label class="form-label text-danger" for="">Comentário sobre {{jogo.nome}}</label>
+            <textarea class="form-control text-danger" cols="30" rows="10" [(ngModel)]="avaliacao.comentario"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">        
+        <button type="button" class="btn btn-outline-danger mr-1" (click)="salvar()">Confirmar</button>
+    </div>
+</div>

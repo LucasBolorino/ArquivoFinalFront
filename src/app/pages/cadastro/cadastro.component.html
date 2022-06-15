@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-6"  style="overflow-x: hidden;">
+        <img src="https://www.jornalbomdia.com.br/tb_noticias/30683/games.png" class="imagem" alt="Phone image">
+    </div>
+    <div class="col-6"  style="overflow-x: hidden;">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-10">
+                <div class="d-flex justify-content-start align-items-center mb-4 text-danger" style="font-size: 24px;">
+                    <b>Inscreva-se no GoodBrowserGames hoje mesmo.</b>
+                </div>
+                <div>
+                    <div class="form-outline mb-4">
+                        <input type="text" id="formNome" class="form-control form-control-lg" [(ngModel)]="usuario.nome"
+                            placeholder="Nome" />
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="formUserName" class="form-control form-control-lg"
+                            [(ngModel)]="usuario.userName" autocomplete="off" onkeypress="return event.charCode != 32"
+                            onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false"
+                            placeholder="Nome do usuário" />
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="email" id="formEmail" class="form-control form-control-lg"
+                            [(ngModel)]="usuario.email" placeholder="Email" />
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="password" id="formSenha" class="form-control form-control-lg" placeholder="Senha"
+                            [(ngModel)]="usuario.senha" autocomplete="off" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="formDataNascimento">Data de nascimento</label>
+                                <input type="date" id="formDataNascimento" class="form-control form-control-lg"
+                                    [(ngModel)]="usuario.dataNascimento" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="formEstado">Estado</label>
+                                <input type="text" id="formEstado" class="form-control form-control-lg"
+                                    [(ngModel)]="usuario.estado" placeholder="Estado"/>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="formPais">País</label>
+                                <input type="text" id="formPais" class="form-control form-control-lg"
+                                    [(ngModel)]="usuario.pais" placeholder="País"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input bg-danger" [(ngModel)]="isAdmin" id="formAdmin">
+                        <label class="form-check-label text-danger" for="formAdmin">Quero ser um colaborador.</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center">
+                        <button class="btn btn-danger btn-lg btn-block" [disabled]="!validaUsuario()"
+                            (click)="cadastro()">Cadastrar</button>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around align-items-center">
+                        <a routerLink="/login" class="btn btn-danger btn-lg btn-block">Já tem uma conta? Entre agora
+                            mesmo.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
